@@ -49,7 +49,7 @@ Offloading reconftw to a separate instance so we don't clog up network traffic a
 
 ## HOW TO USE
 
-- Instead of calling the main reconftw.sh script with args as you usually would, instead, call the "check_active_scans.sh" script with your scan arguments. This checks for running instances of scans and will prompt you to add you scan to a queue if there is already an active scan.
+- Instead of calling the main reconftw.sh script with args as you usually would, instead, call the "check_active_scans.sh" script with your scan arguments. This checks for running instances of scans and will prompt you to add your scan to the queue if there is already scan running.
     - Eg.: ./check_active_scans.sh -d demo.testfire.net -s
 - If there are no scans actively running, your scan will kick off like normal
 - If there is a scan actively running, you will be prompted to put your desired scan into the queue
