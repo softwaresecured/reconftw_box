@@ -14,23 +14,23 @@ Offloading reconftw to a separate instance so we don't clog up network traffic a
 3) Modify the main reconftw.sh script by adding the following function above the original "end()" function:
     - function delete_queued_scan(){
 
-        #current_scan="$0 $@"
+        	#current_scan="$0 $@"
 
-        read -r next_scan < /home/ubuntu/reconftw-main/queued_scans.rftw
-        echo "This is the current scan name:"
-        echo "$current_scan"
+        	read -r next_scan < /home/ubuntu/reconftw-main/queued_scans.rftw
+        	echo "This is the current scan name:"
+        	echo "$current_scan"
 
-        echo "This is the next queued scan:"
-        echo "$next_scan"
+        	echo "This is the next queued scan:"
+        	echo "$next_scan"
 
-        #if the current scan is the same as the top queued scan, delete the scan from the queue on completion of scan
-        if [[ $current_scan == $next_scan ]]; then
-	        echo "Scan complete - deleting this scan from the queue"
-	        sed -i '1d' /home/ubuntu/reconftw-main/queued_scans.rftw
-        else
-	        echo "Next queued scan not deleted."
-        fi
-} 
+        	#if the current scan is the same as the top queued scan, delete the scan from the queue on completion of scan
+        	if [[ $current_scan == $next_scan ]]; then
+	        	echo "Scan complete - deleting this scan from the queue"
+	        	sed -i '1d' /home/ubuntu/reconftw-main/queued_scans.rftw
+        	else
+	        	echo "Next queued scan not deleted."
+        	fi
+	} 
 
 5) Modify the end() function in the main reconftw.sh script to call the newly added "delete_queued_scan()" func:
     - ...snip ...
