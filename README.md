@@ -34,7 +34,7 @@ Offloading reconftw to a separate instance so we don't clog up network traffic a
     } 
     ```
 
-4) Modify the `end()` function in the main `reconftw.sh` script to call the newly added `delete_queued_scan()` func:
+4) Modify the `end()` function in the main `reconftw.sh` script to call the newly added `delete_queued_scan()` function:
     ```bash
     ...snip...
       [ "$SOFT_NOTIFICATION" = true ] && echo "Finished Recon on: ${domain} under ${finaldir} in: ${runtime}" | notify -silent
