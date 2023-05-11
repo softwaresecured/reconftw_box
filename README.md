@@ -35,12 +35,13 @@ Offloading reconftw to a separate instance so we don't clog up network traffic a
 5) Modify the end() function in the main reconftw.sh script to call the newly added "delete_queued_scan()" func:
     - ...snip ...
   [ "$SOFT_NOTIFICATION" = true ] && echo "Finished Recon on: ${domain} under ${finaldir} in: ${runtime}" | notify -silent
-	printf "${bgreen}#######################################################################${reset}\n"
-	#Seperator for more clear messges in telegram_Bot
-	echo "******  Stay safe 🦠 and secure 🔐  ******" | $NOTIFY
+		printf "${bgreen}#######################################################################${reset}\n"
+		#Seperator for more clear messges in telegram_Bot
+		echo "******  Stay safe 🦠 and secure 🔐  ******" | $NOTIFY
 
-	delete_queued_scan
-	. "$start_next_scan"
+		delete_queued_scan
+	
+		. "$start_next_scan"
 
 }
 
