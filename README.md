@@ -15,8 +15,6 @@ Offloading reconftw to a separate instance so we don't clog up network traffic a
     ```bash
    function delete_queued_scan(){
 
-            #current_scan="$0 $@"
-
             read -r next_scan < /home/ubuntu/reconftw-main/queued_scans.rftw
             echo "This is the current scan name:"
             echo "$current_scan"
