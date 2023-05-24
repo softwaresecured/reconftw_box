@@ -1,6 +1,0 @@
-# Feature development
-
-- Skip the queue/forced scan
-- Email alert when your scan has finished
-- Better input validation pretty much everywhere
-- Templates? Is templating/multiple cfg files a thing?

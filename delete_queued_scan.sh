@@ -1,10 +1,3 @@
-#!/usr/bin/env bash
-
-#
-# This script has actually been incorporated into the main reconftw.sh script. This repo entry here is now just to
-# document the logic in case something happens to the main reconftw.sh script when upgrading
-#
-
 current_scan="$0 $@"
 
 read -r next_scan < /home/ubuntu/reconftw-main/queued_scans.rftw

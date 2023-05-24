@@ -2383,6 +2383,7 @@ echo "$*"
 if [[ $current_scan == $next_scan ]]; then
 	echo "Scan complete - deleting this scan from the queue"
 	sed -i '1d' /home/ubuntu/reconftw-main/queued_scans.rftw
+	echo "Scan deleted from queue"
 else
 	echo "Next queued scan not deleted."
 fi
